@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>WordRush — Jogo de Palavras Gratuito</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="Jogo de palavras 100% gratuito com conquistas, ranking global e modo multiplayer!">
+  <meta name="theme-color" content="#FF6B35">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="WordRush">
+
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <link rel="apple-touch-icon" sizes="192x192" href="icon-192.png">
+  <link rel="apple-touch-icon" sizes="512x512" href="icon-512.png">
+  <link rel="manifest" href="manifest.json">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="splash" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #121212; display: flex; justify-content: center; align-items: center; z-index: 9999; flex-direction: column; color: white;">
+    <img src="icon-192.png" style="width: 80px; height: 80px; margin-bottom: 20px;">
+    <h2>WordRush</h2>
+    <p>Carregando...</p>
+  </div>
+
+  <div id="login-screen">
+    <h1>🚀 WORDRUSH</h1>
+    <p>Jogo de palavras 100% gratuito — sem compras, sem anúncios!</p>
+    <input type="text" id="username" placeholder="Seu nome de jogador" maxlength="15" required />
+    <select id="language-select">
+      <option value="pt">Português</option>
+      <option value="en">English</option>
+      <option value="es">Español</option>
+    </select>
+    <button onclick="login()">▶️ Começar a Corrida</button>
+    <button onclick="showGlobalRanking()" style="margin: 10px; background: #4A90E2;">🌍 Ranking Global</button>
+    <button onclick="startLightningMode()" style="margin: 10px; background: #FF6B35;">⚡ Corrida Relâmpago</button>
+    <button onclick="showMultiplayerMenu()" style="margin: 10px; background: #9C27B0;">👥 Multiplayer</button>
+    <button onclick="showShop()" style="margin: 10px; background: #FF9800;">💰 Loja</button>
+    <button onclick="showStats()" style="margin: 10px; background: #2196F3;">📊 Estatísticas</button>
+  </div>
+
+  <div id="game-screen" style="display:none">
+    <header>
+      <h1 id="title">WordRush #<span id="day">1</span></h1>
+      <div id="user-info">
+        <span id="user-display">Usuário</span> | 
+        <span id="points-display">0 pts</span> | 
+        <span id="streak-display">🔥 0</span> |
+        <span id="coins-display">💰 100</span>
+        <button onclick="toggleStats()">📊</button>
+        <button onclick="changeLanguage()">🌐</button>
+      </div>
+    </header>
+    <div id="theme-banner">Tema: <span id="current-theme">Cultura</span></div>
+    <div id="grid"></div>
+    <div id="keyboard"></div>
+    <div id="message"></div>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+  <script src="firebase-config.js"></script>
+  <script src="palavras.js"></script>
+  <script src="script.js"></script>
+  <script src="multiplayer.js"></script>
+  <script src="shop.js"></script>
+  <script src="ranking.js"></script>
+  <script src="stats.js"></script>
+</body>
+</html>

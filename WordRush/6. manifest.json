@@ -1,0 +1,14 @@
+{
+  "name": "WordRush — Jogo de Palavras Gratuito",
+  "short_name": "WordRush",
+  "description": "Jogo de palavras 100% gratuito com conquistas, ranking global e modo multiplayer!",
+  "start_url": "/wordrush/",
+  "display": "standalone",
+  "background_color": "#121212",
+  "theme_color": "#FF6B35",
+  "icons": [
+    {"src": "icon-192.png", "sizes": "192x192", "type": "image/png"},
+    {"src": "icon-512.png", "sizes": "512x512", "type": "image/png"}
+  ],
+  "orientation": "portrait"
+}
